@@ -101,6 +101,8 @@ TEST(ADDITION, "addition de binaires") {
     CHECK( !strcmp("1111", r));
     addition(r, "111111", "101");
     CHECK( !strcmp("1000100", r));
+    addition(r, "1111111111111111111111111111111", "1");
+    CHECK( !strcmp("10000000000000000000000000000000", r));
 } 
 
 

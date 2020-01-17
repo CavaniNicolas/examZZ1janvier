@@ -96,7 +96,7 @@ TEST(FICHIER_ZZ) {
     CHECK ( EQ(   74   , minimum(tab_zz, taille_zz)));
     CHECK ( EQ(  130   , maximum(tab_zz, taille_zz)));
 }  
-/*
+
 TEST(AFFICHAGE_ZZ) {
     int i;
     etoiles_zz = affichage(dat_zz, taille_zz);
@@ -126,7 +126,7 @@ TEST(AFFICHAGE_IPHONE) {
     {
        CHECK( etoiles_iphone_res[i] == etoiles_iphone[i]);
     }
-}*/
+}
 
 
 END_TEST_GROUP(examen)
