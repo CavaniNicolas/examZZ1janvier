@@ -95,8 +95,13 @@ int * affichage(donnee_t * tab, int taille) {
 
 		int i=0;
 		for (i=0;i<taille;i++){
-			etoiles[i]=40*tab_val[i]/(max-min);
-			printf("%f\n",40*tab_val[i]/(max-min));
+			if (40*(tab_val[i]-min)/(max-min)==0 && tab_val[i]!=0){
+				etoiles[i]=1;
+			}
+			else{
+				etoiles[i]=40*(tab_val[i]-min)/(max-min);
+			}
+			printf("%f\n",40*(tab_val[i]-min)/(max-min));
 		}
 	}
 
