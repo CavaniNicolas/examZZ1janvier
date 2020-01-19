@@ -64,10 +64,10 @@ TEST(LECTURE1, "") {
     free(texte);
 }
 
-/*
-TEST(INITIALISER, "") {
+
+/*TEST(INITIALISER, "") {
     info infos[26];
-    int i , j;
+    int j;
     initialiser(infos);
 
     CHECK( 'A' == infos[0].lettre );
@@ -83,7 +83,7 @@ TEST(INITIALISER, "") {
     CHECK(   0 == infos[25].nbd    );
     for(j = 0; j < MAX; ++j)
         CHECK( !strcmp("", infos[25].mots[j]));
-}
+}*/
 
 TEST(INSERER, "") {
     info infos[26];
@@ -128,10 +128,39 @@ TEST(INSERER, "") {
     CHECK( !strcmp("EXERCICE"        , infos[4].mots[2]));
     CHECK( !strcmp(""                , infos[4].mots[3]));
 
+
     CHECK(   5 == total_mots          (infos) );
     CHECK(   3 == total_mots_distincts(infos) );
 
+
+    //tests supplementaires persos
+
+/*    inserer(infos, "EXO");
+    CHECK(   6 == infos[4].nb     );
+    CHECK(   4 == infos[4].nbd    );
+    CHECK( !strcmp("ECLAIRCISSEMENT" , infos[4].mots[0]));
+    CHECK( !strcmp("EXAMEN"          , infos[4].mots[1]));
+    CHECK( !strcmp("EXERCICE"        , infos[4].mots[2]));
+    CHECK( !strcmp("EXO"             , infos[4].mots[3]));
+    CHECK( !strcmp(""                , infos[4].mots[4]));
+
+    inserer(infos, "AVION");
+    CHECK(   1 == infos[0].nb     );
+    CHECK(   1 == infos[0].nbd    );
+    CHECK( !strcmp("AVION" , infos[0].mots[0]));
+    CHECK( !strcmp(""    , infos[0].mots[1]));
+
+    inserer(infos, "AVION");
+    CHECK(   2 == infos[0].nb     );
+    CHECK(   1 == infos[0].nbd    );
+    CHECK( !strcmp("AVION" , infos[0].mots[0]));
+    CHECK( !strcmp("" , infos[0].mots[1]));
+
+    CHECK(   8 == total_mots          (infos) );
+    CHECK(   5 == total_mots_distincts(infos) );
+*/
 }
+
 
 TEST(STATS2, "") {
     info infos[26];
@@ -153,6 +182,7 @@ TEST(STATS2, "") {
 
     CHECK(   1 == infos[1].nb     );
     CHECK( !strcmp("AVEZ", infos[0].mots[0]));
+    //CHECK( !strcmp("BASE", infos[1].mots[0]));
 
     CHECK( !strcmp("LA"     , infos[11].mots[0]));    
     CHECK( !strcmp("LE"     , infos[11].mots[1]));    
@@ -182,7 +212,7 @@ TEST(LECTURE2, "") {
     CHECK(   29 == total_mots_distincts(infos) );
 
     free(texte);
-}*/
+}
 
 END_TEST_GROUP(exo2)
 

@@ -4,7 +4,10 @@
 #define MAX 100
 
 typedef struct  {
-  char mots[MAX][50];
+	char lettre;
+	int nb;
+	int nbd;
+	char mots[MAX][50];
 } info ;
 
 void stats1(char *, int *, int * , int*) ;
